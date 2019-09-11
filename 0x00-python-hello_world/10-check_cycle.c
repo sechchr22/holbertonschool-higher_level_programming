@@ -19,9 +19,6 @@ int check_cycle(listint_t *list)
 		if (p1 == p2)
 		return (1);
 
-		/*else if (p2->next == NULL)
-		return (0);*/
-
 		p2 = p2->next;
 		p2 = p2->next;
 		p1 = p1->next;
