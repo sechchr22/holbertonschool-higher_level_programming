@@ -15,7 +15,10 @@ if number > 9 or number < -9:
     if module == 0:
         print("Last digit of {} is {} {}".format(number, module, str2))
     elif number < 6:
-        print("Last digit of {} is {} {}".format(number, module, str3))
+        if number < 0:
+            print("Last digit of {} is -{} {}".format(number, module, str3))
+        else:
+            print("Last digit of {} is {} {}".format(number, module, str3))
     else:
         print("Last digit of {} is {} {}".format(number, module, str1))
 
