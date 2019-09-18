@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def multiple_returns(sentence):
-    if sentence is None:
+    if len(sentence) is 0:
         new_tuple = (0, None)
         return(new_tuple)
     else:
