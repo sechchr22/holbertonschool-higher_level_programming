@@ -35,7 +35,7 @@ int is_palindrome(listint_t **head)
 	listint_t *temp = *head;
 
 	if (*head == NULL)
-	return (0);
+	return (1);
 	else if ((*head)->next == NULL)
 	return (1);
 
@@ -59,6 +59,10 @@ int is_palindrome(listint_t **head)
 		else
 		return (0);
 	}
-	else
-	return (0);
+	/*else 
+	{
+		half1 = ((list_len(*head) + 1) / 2) - 1;
+		for (i = 0; i <= half1; i++)
+		{
+			sum1 = sum1*/ 
 }
