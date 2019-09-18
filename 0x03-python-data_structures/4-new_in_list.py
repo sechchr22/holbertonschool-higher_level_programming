@@ -8,7 +8,6 @@ def new_in_list(my_list, idx, element):
         return(my_new_list)
 
     else:
-        for i in range(0, len(my_list)):
-            my_new_list.insert(i, my_list[i])
+        my_new_list = my_list.copy()
         my_new_list[idx] = element
         return(my_new_list)
