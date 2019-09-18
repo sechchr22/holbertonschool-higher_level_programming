@@ -7,7 +7,7 @@
  * Return: number of nodes
 */
 
-size_t list_len(const list_t *h)
+size_t list_len(listint_t *h)
 {
 	unsigned int count = 0;
 
@@ -41,24 +41,24 @@ int is_palindrome(listint_t **head)
 
 	if (list_len(temp) % 2 == 0)
 	{
-		half2 = (list_len(temp) / 2);
+		half2 = (list_len(*head) / 2);
 		half1 = half2 - 1;
 
-		for (i = 0, i <= half1, i++)
+		for (i = 0; i <= half1; i++)
 		{
 			sum1 = sum1 + temp->n;
 			temp = temp->next;
 		}
-		temp = temp->next;
-		i++;
-		for (j = i; j < list_len(temp); j++)
+		for (j = 0; j < half2; j++)
 		{
 			sum2 = sum2 + temp->n;
 			temp = temp->next;
 		}
-		if (sum1 == suma2)
+		if (sum1 == sum2)
 		return (1);
 		else
 		return (0);
 	}
+	else
+	return (0);
 }
