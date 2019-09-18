@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def divisible_by_2(my_list=[]):
 
-    if len(my_list) is 0:
+    if my_list is None:
         return(None)
 
     true_or_false = []
