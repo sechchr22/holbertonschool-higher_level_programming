@@ -77,6 +77,8 @@ class Square:
         """print square"""
         if self.__size is 0:
             print()
+        for l in range(self.__position[1]):
+            print()
         for i in range(0, self.__size):
             for k in range(0, self.__position[0]):
                 print("{}".format(" "), end="")
