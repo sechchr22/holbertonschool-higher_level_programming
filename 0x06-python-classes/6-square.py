@@ -15,7 +15,11 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
-        if type(position) == tuple and len(position) == 2:
+        if position == (0, 0):
+            self.__position = position
+        elif type(position) == tuple and len(position) == 2 \
+                and position[0] >= 0 and position[1] >= 0 \
+                and type(position[0]) is int and type(position[1]) is int:
             self.__position = position
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -59,7 +63,7 @@ class Square:
             value: position value
         """
         if type(value) == tuple and len(value) == 2 \
-                and value[0] > 0 and value[1] > 0 \
+                and value[0] >= 0 and value[1] >= 0 \
                 and type(value[0]) is int and type(value[1]) is int:
             self.__position = value
         else:
