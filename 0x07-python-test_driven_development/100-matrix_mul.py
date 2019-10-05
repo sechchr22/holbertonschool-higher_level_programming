@@ -32,11 +32,11 @@ def matrix_mul(m_a, m_b):
     # check if there is no integer or float inside
     for i in range(len(m_a)):
         for k in range(len(m_a[i])):
-            if type(m_a[i][k]) != int or type(m_a[i][k]) != float:
+            if type(m_a[i][k]) != int and type(m_a[i][k]) != float:
                 raise TypeError('m_a should contain only integers or floats')
     for j in range(len(m_b)):
         for l in range(len(m_b[j])):
-            if type(m_b[j][l]) != int or type(m_a[j][l]) != float:
+            if type(m_b[j][l]) != int and type(m_a[j][l]) != float:
                 raise TypeError('m_b should contain only integers or floats')
 
     # check if they are rectangle matrix
@@ -61,3 +61,10 @@ def matrix_mul(m_a, m_b):
     rows_a = len(m_a)
     colums_b = len(m_b[0])
     result_matrix = []
+    result_vector = []
+    for i in range(rows_a):
+        for j in range(colums_b):
+            # result_matrix[i][j] += (m_a[i][j] * m_b[j][i])
+            result_vector.append(m_a[i][j] * m_b[j][i])
+        result_matrix.append(result_vector)
+    return result_matrix
