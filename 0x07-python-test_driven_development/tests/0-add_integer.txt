@@ -30,3 +30,11 @@ Traceback (most recent call last):
 TypeError: a must be an integer
 >>> add_integer((1 * 10**100), 5)
 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000005
+>>> inf = float('inf')
+>>> nan = float('nan')
+>>> add_integer(inf, 4)
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(nan, 4)
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
