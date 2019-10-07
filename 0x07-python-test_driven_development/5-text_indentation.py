@@ -37,7 +37,7 @@ def text_indentation(text):
             print(text[i], end="")
             i += 1
     if text[i] == "." or text[i] == "?" or text[i] == ":":
-        print(text[i])
+        print(text[i], end="")
         print()
     else:
-        print(text[i])
+        print(text[i], end="")
