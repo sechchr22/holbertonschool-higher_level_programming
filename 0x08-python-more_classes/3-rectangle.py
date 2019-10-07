@@ -89,6 +89,10 @@ class Rectangle:
        """To print rectangle with #"""
        i = 0
        chain = ""
+
+       if self.__height is 0 or self.__width is 0:
+           return chain
+
        while (i < self.__height):
            j = 0
            while( j < self.__width):
@@ -97,4 +101,5 @@ class Rectangle:
            if i != (self.__height - 1):
                chain += "\n"
            i += 1
+
        return chain
