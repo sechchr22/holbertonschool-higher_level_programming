@@ -116,4 +116,4 @@ class Rectangle:
         """
         To delete an instance
         """
-        print('Bye Rectangle...')
+        print('Bye rectangle...')
