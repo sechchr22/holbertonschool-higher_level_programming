@@ -3,7 +3,7 @@ class Rectangle:
 
     """
     Rectangle with width and height attributes
-    
+
     Args:
         width: width of the rectangle must be an integer
         height: height of the rectangle must be an integer
@@ -32,7 +32,7 @@ class Rectangle:
         To set rectangle´s width
 
         Args:
-            value: must be an integer 
+            value: must be an integer
          """
         if type(value) != int:
             raise TypeError('width must be an integer')
@@ -66,7 +66,7 @@ class Rectangle:
     def area(self):
         """
         To calculate rectangle´s area
-        
+
         Returns: rectangle´s area
         """
         return(self.__height * self.__width)
@@ -86,20 +86,20 @@ class Rectangle:
         return(a + b)
 
     def __str__(self):
-       """To print rectangle with #"""
-       i = 0
-       chain = ""
+        """To print rectangle with #"""
+        i = 0
+        chain = ""
 
-       if self.__height is 0 or self.__width is 0:
-           return chain
+        if self.__height is 0 or self.__width is 0:
+            return chain
 
-       while (i < self.__height):
-           j = 0
-           while( j < self.__width):
-               chain += "#"
-               j += 1
-           if i != (self.__height - 1):
-               chain += "\n"
-           i += 1
+        while (i < self.__height):
+            j = 0
+            while(j < self.__width):
+                chain += "#"
+                j += 1
+            if i != (self.__height - 1):
+                chain += "\n"
+            i += 1
 
-       return chain
+        return chain
