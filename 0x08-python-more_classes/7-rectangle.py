@@ -123,4 +123,4 @@ class Rectangle:
         To delete an instance
         """
         Rectangle.number_of_instances -= 1
-        print('Bye Rectangle...')
+        print('Bye rectangle...')
