@@ -3,7 +3,7 @@ class Rectangle:
 
     """
     Rectangle with width and height attributes
-    
+
     Args:
         width: width of the rectangle must be an integer
         height: height of the rectangle must be an integer
@@ -36,7 +36,7 @@ class Rectangle:
         """
         To set rectangle´s width
         Args:
-            value: must be an integer 
+            value: must be an integer
          """
         if type(value) != int:
             raise TypeError('width must be an integer')
@@ -68,7 +68,7 @@ class Rectangle:
     def area(self):
         """
         To calculate rectangle´s area
-        
+
         Returns: rectangle´s area
         """
         return(self.__height * self.__width)
@@ -89,7 +89,7 @@ class Rectangle:
         """
         To print rectangle with #
         Returns: square with #, or empty one if width or
-        height is equal to 0 
+        height is equal to 0
         """
         i = 0
         chain = ""
@@ -99,7 +99,7 @@ class Rectangle:
 
         while (i < self.__height):
             j = 0
-            while( j < self.__width):
+            while(j < self.__width):
                 chain += "#"
                 j += 1
             if i != (self.__height - 1):
@@ -124,4 +124,4 @@ class Rectangle:
         To delete an instance
         """
         Rectangle.number_of_instances -= 1
-        print('Bye Rectangle...') 
+        print('Bye Rectangle...')
