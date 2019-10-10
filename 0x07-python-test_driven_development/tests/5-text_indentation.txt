@@ -55,6 +55,7 @@ TypeError: text must be a string
 :
 <BLANKLINE>
 >>> text_indentation("Hola soy la prueba.De un punto sin espacio luego")
-Hola soy la prueba.
-<BLANKLINE>
-De un punto sin espacio luego
+Hola soy la prueba.De un punto sin espacio luego
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
