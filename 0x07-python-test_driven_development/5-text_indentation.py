@@ -25,18 +25,20 @@ def text_indentation(text):
     i = 0
 
     while i < (len(text) - 1):
-        if text[i] == "." or text[i] == "?" or text[i] == ":":
+        if (text[i] == "." or text[i] == "?" or text[i] == ":")\
+           and text[i + 1] == " ":
             print(text[i], end="")
             print()
             print()
-            if text[i + 1] == " " and text[i + 2] is not None:
+            if text[i + 2] is not None:
                 i += 2
             else:
                 i += 1
         else:
             print(text[i], end="")
             i += 1
-    if text[i] == "." or text[i] == "?" or text[i] == ":":
+    if (text[i] == "." or text[i] == "?" or text[i] == ":")\
+       and text[i + 1] == " ":
         print(text[i], end="")
         print()
     else:
