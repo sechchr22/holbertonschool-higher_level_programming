@@ -1,0 +1,14 @@
+#doctest for 7-base_geometry.py integer_validator method
+
+integer_validator: validates value
+
+Tests:
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> test_object = BaseGeometry()
+>>> test_object.integer_validator = ("empty")
+>>> test_object.integer_validator = ("infinite", )
+>>> test_object.integer_validator = ("negative", )
+>>> test_object.integer_validator = ("NaN", )
+>>> test_object.integer_validator = ("char", )
+>>> test_object.integer_validator = ()
