@@ -1,14 +1,53 @@
-#doctest for 7-base_geometry.py integer_validator method
-
-integer_validator: validates value
-
-Tests:
+#doctest for integer_validator from class BaseGeometry (7-base_geometry.py)
 
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Test 0:
+
 >>> test_object = BaseGeometry()
->>> test_object.integer_validator = ("empty")
->>> test_object.integer_validator = ("infinite", )
->>> test_object.integer_validator = ("negative", )
->>> test_object.integer_validator = ("NaN", )
->>> test_object.integer_validator = ("char", )
->>> test_object.integer_validator = ()
+>>> test_object.integer_validator("int", 100)
+    
+
+Test 1:
+
+>>> test_object = BaseGeometry()
+>>> test_object.integer_validator("char", "a")
+Traceback (most recent call last):
+TypeError: char must be an integer
+
+Test 2:
+
+>>> test_object = BaseGeometry()
+>>> test_object.integer_validator("negative", -1)
+Traceback (most recent call last):
+ValueError: negative must be greater than 0
+
+Test 3:
+
+>>> test_object = BaseGeometry()
+>>> nan = float('nan')
+>>> test_object.integer_validator("nan", nan)
+Traceback (most recent call last):
+TypeError: nan must be an integer
+
+Test 4:
+
+>>> test_object = BaseGeometry()
+>>> inf = float('inf')
+>>> test_object.integer_validator("infinite", inf)
+Traceback (most recent call last):
+TypeError: infinite must be an integer
+
+Test 5:
+
+>>> test_object = BaseGeometry()
+>>> test_object.integer_validator ("One_argument")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Test 6:
+
+>>> test_object = BaseGeometry()
+>>> test_object.integer_validator ()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
