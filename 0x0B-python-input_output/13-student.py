@@ -38,6 +38,7 @@ class Student:
         Args:
             json: Dictionary
         """
-        keys = list(json.keys())
-        for key in keys:
-            self.key = json[key]
+        if bool(json) is not False:
+            self.first_name = json['first_name']
+            self.last_name = json['last_name']
+            self.age = json['age']
