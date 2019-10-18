@@ -21,6 +21,8 @@ class Student:
         new_dict = {}
 
         if attrs is not None:
+            if len(attrs) is 0:
+                pass
             for attribute in attrs:
                 if attribute in dictionary:
                     new_dict[attribute] = dictionary[attribute]
