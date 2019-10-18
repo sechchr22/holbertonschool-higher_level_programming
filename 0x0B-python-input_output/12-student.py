@@ -22,7 +22,7 @@ class Student:
 
         if attrs is not None:
             if len(attrs) is 0:
-                pass
+                return new_dict
             for attribute in attrs:
                 if attribute in dictionary:
                     new_dict[attribute] = dictionary[attribute]
