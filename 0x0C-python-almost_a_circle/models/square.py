@@ -23,3 +23,25 @@ class Square(Rectangle):
         elif value <= 0:
             raise ValueError('width must be > 0')
         self.width = value
+
+    def update(self, *args, **kwargs):
+
+        attribute = ['id', 'size', 'x', 'y']
+        i = 0
+
+        if args is not None and len(args) != 0:
+            for arg in args:
+                setattr(self, attribute[i], arg)
+                i += 1
+        else:
+            for kwarg in kwargs:
+                for attr in attribute:
+                    if kwarg == attr:
+                        setattr(self, attr, kwargs[kwarg])
+
+    def to_dictionary(self):
+        attribute = ['id', 'size', 'x', 'y']
+        _dic = {}
+        for attr in attribute:
+            _dic[attr] = getattr(self, attr)
+        return _dic        

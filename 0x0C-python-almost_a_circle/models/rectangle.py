@@ -109,3 +109,10 @@ class Rectangle(Base):
                 for attr in attribute:
                     if kwarg == attr:
                         setattr(self, attr, kwargs[kwarg])
+
+    def to_dictionary(self):
+        attribute = ['id', 'width', 'height', 'x', 'y']
+        _dic = {}
+        for attr in attribute:
+            _dic[attr] = getattr(self, attr)
+        return _dic
