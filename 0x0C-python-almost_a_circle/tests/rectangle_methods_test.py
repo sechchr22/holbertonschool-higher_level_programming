@@ -16,7 +16,7 @@ class RectangleMethodsTestCase(unittest.TestCase):
         self.assertEqual(r_1.area(), 6)
 
     def test_display(self):
- 
+
         r = Rectangle(3, 2)
 
         height = 2
@@ -32,6 +32,6 @@ class RectangleMethodsTestCase(unittest.TestCase):
             expected += "\n"
             i += 1
 
-        with patch('sys.stdout', new = StringIO()) as fake_out:
+        with patch('sys.stdout', new=StringIO()) as fake_out:
             r.display()
             self.assertEqual(fake_out.getvalue(), expected)

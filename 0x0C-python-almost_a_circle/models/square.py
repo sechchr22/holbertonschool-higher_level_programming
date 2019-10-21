@@ -44,4 +44,4 @@ class Square(Rectangle):
         _dic = {}
         for attr in attribute:
             _dic[attr] = getattr(self, attr)
-        return _dic        
+        return _dic
