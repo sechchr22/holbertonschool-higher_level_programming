@@ -6,6 +6,7 @@ from models.base import Base
 class Rectangle(Base):
     """
     """
+
     def __init__(self, width, height, x=0, y=0, id=None):
         if not isinstance(width, int):
             raise TypeError('width must be an integer')
@@ -39,7 +40,7 @@ class Rectangle(Base):
             raise TypeError('width must be an integer')
         elif value <= 0:
             raise ValueError('width must be > 0')
-        self.__width__ = value
+        self.__width = value
 
     @property
     def height(self):
@@ -51,7 +52,7 @@ class Rectangle(Base):
             raise TypeError('height must be an integer')
         elif value <= 0:
             raise ValueError('height must be > 0')
-        self.__height__ = value
+        self.__height = value
 
     @property
     def x(self):
@@ -94,9 +95,17 @@ class Rectangle(Base):
         return '[Rectangle] ({}) {}/{} - {}/{}'.format(self.id,
                                                        self.__x, self.__y, self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
+
         attribute = ['id', 'width', 'height', 'x', 'y']
         i = 0
-        for arg in args:
-             setattr(self, attribute[i], arg)
-             i += 1
+
+        if args is not None and len(args) != 0:
+            for arg in args:
+                setattr(self, attribute[i], arg)
+                i += 1
+        else:
+            for kwarg in kwargs:
+                for attr in attribute:
+                    if kwarg == attr:
+                        setattr(self, attr, kwargs[kwarg])
