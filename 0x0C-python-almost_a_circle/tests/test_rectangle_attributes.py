@@ -9,8 +9,9 @@ class RectangleAttributesTestCase(unittest.TestCase):
 
     def test_no_arguments(self):
 
-        msg = "__init__() missing 2 required positional\
-        arguments: 'width' and 'height'"
+        pt1 = "__init__() missing 2 required positional "
+        pt2 = "arguments: 'width' and 'height'"
+        msg = pt1 + pt2
 
         with self.assertRaises(TypeError) as error:
             obj = Rectangle()

@@ -37,10 +37,10 @@ class RectangleMethodsTestCase(unittest.TestCase):
             self.assertEqual(fake_out.getvalue(), expected)
 
     def test_str(self):
-     
+
         r = Rectangle(1, 2, 3, 4, 5)
         expected = "[Rectangle] (5) 3/4 - 1/2\n"
-        
+
         with patch('sys.stdout', new=StringIO()) as fake_out:
             print(r)
             self.assertEqual(fake_out.getvalue(), expected)
@@ -75,3 +75,15 @@ class RectangleMethodsTestCase(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as fake_out:
             r.display()
             self.assertEqual(fake_out.getvalue(), expected)
+
+    def test_str(self):
+
+        r = Rectangle(3, 2, 2, 1, 6)
+
+        expected = "[Rectangle] (6) 2/1 - 3/2\n"
+
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            print(r)
+            self.assertEqual(fake_out.getvalue(), expected)
+
+        self.assertEqual(fake_out.getvalue(), expected)
