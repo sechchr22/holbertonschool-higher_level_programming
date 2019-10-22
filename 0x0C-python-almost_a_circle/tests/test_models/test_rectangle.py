@@ -8,8 +8,10 @@ from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
+    """Unittest for Rectangle"""
 
     def test_no_arguments(self):
+        """No arguments passed"""
 
         pt1 = "__init__() missing 2 required positional "
         pt2 = "arguments: 'width' and 'height'"
@@ -21,6 +23,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(msg in str(error.exception))
 
     def test_one_argument(self):
+        """One argument passed"""
 
         msg = "__init__() missing 1 required positional argument: 'height'"
 
@@ -30,11 +33,13 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(msg in str(error.exception))
 
     def test_id_None(self):
+        """if id is None"""
 
         obj = Rectangle(1, 2)
         self.assertEqual(obj.id, 1)
 
     def test_all_arguments(self):
+        """Passing all arguments"""
 
         obj = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(obj.width, 1)
@@ -44,6 +49,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(obj.id, 5)
 
     def test_width_inf(self):
+        """Passing inf"""
 
         inf = float('inf')
 
@@ -55,6 +61,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(msg in str(error.exception))
 
     def test_width_nan(self):
+        """Passing nan"""
 
         nan = float('nan')
 
@@ -66,6 +73,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(msg in str(error.exception))
 
     def test_width_not_int(self):
+        """Not an int passed"""
 
         msg = "width must be an integer"
 
@@ -75,6 +83,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(msg in str(error.exception))
 
     def test_width_zero(self):
+        """0 passed"""
 
         msg = "width must be > 0"
 
@@ -84,6 +93,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(msg in str(error.exception))
 
     def test_width_negative(self):
+        """negative passed"""
 
         msg = "width must be > 0"
 
@@ -93,6 +103,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(msg in str(error.exception))
 
     def test_height_inf(self):
+        """inf passed"""
 
         inf = float('inf')
 
@@ -104,6 +115,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(msg in str(error.exception))
 
     def test_height_nan(self):
+        """nan passed"""
 
         nan = float('nan')
 
@@ -115,6 +127,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(msg in str(error.exception))
 
     def test_height_not_int(self):
+        """not int passed"""
 
         msg = "height must be an integer"
 
@@ -124,6 +137,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(msg in str(error.exception))
 
     def test_height_zero(self):
+        """0 passed"""
 
         msg = "height must be > 0"
 
@@ -133,6 +147,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(msg in str(error.exception))
 
     def test_height_negative(self):
+        """negative passed"""
 
         msg = "height must be > 0"
         with self.assertRaises(ValueError) as error:
@@ -141,6 +156,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(msg in str(error.exception))
 
     def test_x_inf(self):
+        """inf passed"""
 
         inf = float('inf')
 
@@ -152,6 +168,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(msg in str(error.exception))
 
     def test_x_nan(self):
+        """nan passed"""
 
         nan = float('nan')
 
@@ -163,6 +180,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(msg in str(error.exception))
 
     def test_x_not_int(self):
+        """not int passed"""
 
         msg = "x must be an integer"
 
@@ -172,6 +190,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(msg in str(error.exception))
 
     def test_x_negative(self):
+        """negative passed"""
 
         msg = "x must be >= 0"
 
@@ -181,6 +200,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(msg in str(error.exception))
 
     def test_y_inf(self):
+        """inf passed"""
 
         inf = float('inf')
 
@@ -192,6 +212,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(msg in str(error.exception))
 
     def test_y_nan(self):
+        """nan passed"""
 
         nan = float('nan')
 
@@ -203,6 +224,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(msg in str(error.exception))
 
     def test_y_not_int(self):
+        """not int passed"""
 
         msg = "y must be an integer"
 
@@ -212,6 +234,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(msg in str(error.exception))
 
     def test_y_negative(self):
+        """negative passed"""
 
         msg = "y must be >= 0"
 
@@ -220,12 +243,14 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(msg in str(error.exception))
 
     def test_area(self):
+        """Area test"""
         r = Rectangle(3, 2)
         r_1 = Rectangle(2, 3, 4, 5, 6)
         self.assertEqual(r.area(), 6)
         self.assertEqual(r_1.area(), 6)
 
     def test_display_without_x_y(self):
+        """Display method test"""
 
         r = Rectangle(3, 2)
 
@@ -246,16 +271,8 @@ class TestRectangle(unittest.TestCase):
             r.display()
             self.assertEqual(fake_out.getvalue(), expected)
 
-    def test_str(self):
-
-        r = Rectangle(1, 2, 3, 4, 5)
-        expected = "[Rectangle] (5) 3/4 - 1/2\n"
-
-        with patch('sys.stdout', new=StringIO()) as fake_out:
-            print(r)
-            self.assertEqual(fake_out.getvalue(), expected)
-
     def test_full_display(self):
+        """Display method with full arguments"""
 
         r = Rectangle(3, 2, 2, 1)
 
@@ -287,6 +304,7 @@ class TestRectangle(unittest.TestCase):
             self.assertEqual(fake_out.getvalue(), expected)
 
     def test_str(self):
+        """str method"""
 
         r = Rectangle(3, 2, 2, 1, 6)
 
