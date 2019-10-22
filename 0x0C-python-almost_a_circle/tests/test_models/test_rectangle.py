@@ -6,7 +6,8 @@ from io import StringIO
 from unittest.mock import patch
 from models.rectangle import Rectangle
 
-class RectangleTestCase(unittest.TestCase):
+
+class TestRectangle(unittest.TestCase):
 
     def test_no_arguments(self):
 

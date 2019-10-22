@@ -5,7 +5,7 @@ import unittest
 from models.base import Base
 
 
-class BaseTestCase(unittest.TestCase):
+class TestBase(unittest.TestCase):
 
     def test_id_is_none(self):
 
