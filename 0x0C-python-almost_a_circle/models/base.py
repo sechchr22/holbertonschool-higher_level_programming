@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 import json
 
-
 class Base:
     """
     """
@@ -43,3 +42,50 @@ class Base:
 
         with open('{}'.format(filename), 'a+', encoding='utf-8') as a_file:
             json.dump(list_of_json_objs, a_file)
+
+    @classmethod
+    def create(cls, **dictionary):
+
+        key_word = 'size'
+        signal = 'Square not found'
+
+        dummy_square = cls(1, 2, 3)
+        dummy_rectangle = cls(1, 2, 3, 4)
+
+        for key in dictionary:
+            if key == key_word:
+                signal = 'Square found'
+                dummy_square.update(**dictionary)
+                break
+
+        if signal == 'Square not found':
+            dummy_rectangle.update(**dictionary)
+            return dummy_rectangle
+
+        else:
+            return dummy_square
+
+    @classmethod
+    def load_from_file(cls):
+
+        list_of_instances = []
+        filename = '{}.json'.format(cls.__name__)
+
+        with open('{}'.format(filename), 'r', encoding='utf-8') as a_file:
+            line = a_file.readline()
+
+        list_of_instances_json = cls.from_json_string(line)
+
+        for instance_dict in list_of_instances_json:
+            new_instance = cls.create(**instance_dict)
+            list_of_instances.append(new_instance)
+
+        return list_of_instances
+
+    @staticmethod
+    def from_json_string(json_string):
+
+        if len(json_string) is 0:
+            return []
+
+        return json.loads(json_string)
