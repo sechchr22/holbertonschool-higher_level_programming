@@ -315,3 +315,6 @@ class TestRectangle(unittest.TestCase):
             self.assertEqual(fake_out.getvalue(), expected)
 
         self.assertEqual(fake_out.getvalue(), expected)
+
+if __name__ == '__main__':
+    unittest.main()

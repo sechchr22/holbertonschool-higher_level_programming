@@ -35,3 +35,6 @@ class TestBase(unittest.TestCase):
         """if negative index"""
         obj = Base(-1)
         self.assertEqual(obj.id, -1)
+
+if __name__ == '__main__':
+    unittest.main()
