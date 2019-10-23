@@ -1,12 +1,22 @@
 #!/usr/bin/python3
+"""
+Base Class
+"""
 import json
+
 
 class Base:
     """
+    Base class
     """
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """
+        to inizializate an instance
+        Args:
+            id: integer
+        """
         if id is not None:
             self.id = id
         else:
@@ -14,13 +24,23 @@ class Base:
             self.id = Base.__nb_objects
 
     def to_json_string(list_dictionaries):
+        """
+        json to list
+        Args:
+            list_dictionaries: list of dictionaries
+        """
         if list_dictionaries is None or len(list_dictionaries) is 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-
+        """
+        save instance to a file
+        Args:
+            cls: class
+            list_objs: 
+        """
         attributes = ['width', 'height', 'size', 'x', 'y', 'id']
         list_of_json_objs = []
 
