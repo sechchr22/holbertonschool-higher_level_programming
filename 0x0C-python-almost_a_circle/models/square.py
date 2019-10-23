@@ -42,6 +42,7 @@ class Square(Rectangle):
                 for attr in attribute:
                     if kwarg == attr:
                         setattr(self, attr, kwargs[kwarg])
+                setattr(self, 'size', kwargs['width'])
 
     def to_dictionary(self):
         """instance to dictionary"""
