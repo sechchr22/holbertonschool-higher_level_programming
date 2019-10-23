@@ -39,7 +39,7 @@ class Base:
         save instance to a file
         Args:
             cls: class
-            list_objs: 
+            list_objs: list of objects
         """
         attributes = ['width', 'height', 'size', 'x', 'y', 'id']
         list_of_json_objs = []
@@ -65,6 +65,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """to create an instance"""
 
         key_word = 'size'
         signal = 'Square not found'
@@ -87,6 +88,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """load instance from a file"""
 
         list_of_instances = []
         filename = '{}.json'.format(cls.__name__)
@@ -104,6 +106,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """from json to string"""
 
         if len(json_string) is 0:
             return []
