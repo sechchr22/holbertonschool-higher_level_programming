@@ -36,7 +36,7 @@ class TestRectangle(unittest.TestCase):
         """if id is None"""
 
         obj = Rectangle(1, 2)
-        self.assertEqual(obj.id, 5)
+        self.assertEqual(obj.id, 4)
 
     def test_all_arguments(self):
         """Passing all arguments"""
@@ -315,6 +315,18 @@ class TestRectangle(unittest.TestCase):
             self.assertEqual(fake_out.getvalue(), expected)
 
         self.assertEqual(fake_out.getvalue(), expected)
+
+    def test_update_with_args(self):
+        """update method with *args"""
+
+        r = Rectangle(1, 2)
+        r.update(2, 3, 4, 5, 6)
+        
+        self.assertEqual(2, r.id)
+        self.assertEqual(3, r.width)
+        self.assertEqual(4, r.height)
+        self.assertEqual(5, r.x)
+        self.aseertEqual(6, r.y)
 
 if __name__ == '__main__':
     unittest.main()
