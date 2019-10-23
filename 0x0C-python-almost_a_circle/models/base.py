@@ -61,7 +61,7 @@ class Base:
         filename = '{}.json'.format(cls.__name__)
 
         with open('{}'.format(filename), 'w+', encoding='utf-8') as a_file:
-            json.dump(list_of_json_objs, a_file)
+            a_file.write(cls.to_json_string(list_of_json_objs))
 
     @classmethod
     def create(cls, **dictionary):
