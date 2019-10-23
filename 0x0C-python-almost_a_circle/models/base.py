@@ -3,6 +3,7 @@
 Base Class
 """
 import json
+import os
 
 
 class Base:
@@ -83,6 +84,9 @@ class Base:
 
         list_of_instances = []
         filename = '{}.json'.format(cls.__name__)
+
+        if os.path.exists(filename) is False:
+            return list_of_instances
 
         with open('{}'.format(filename), 'r', encoding='utf-8') as a_file:
             line = a_file.readline()
