@@ -36,7 +36,7 @@ class TestRectangle(unittest.TestCase):
         """if id is None"""
 
         obj = Rectangle(1, 2)
-        self.assertEqual(obj.id, 1)
+        self.assertEqual(obj.id, 5)
 
     def test_all_arguments(self):
         """Passing all arguments"""
