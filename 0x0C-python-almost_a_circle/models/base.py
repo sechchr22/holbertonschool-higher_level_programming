@@ -89,6 +89,8 @@ class Base:
             return list_of_instances
 
         with open('{}'.format(filename), 'r', encoding='utf-8') as a_file:
+            if a_file is None:
+                return []
             line = a_file.readline()
 
         list_of_instances_json = cls.from_json_string(line)
