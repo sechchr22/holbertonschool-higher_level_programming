@@ -105,7 +105,7 @@ class Base:
     def from_json_string(json_string):
         """from json to string"""
 
-        if len(json_string) is 0:
+        if json_string is None or len(json_string) is 0:
             return []
 
         return json.loads(json_string)
