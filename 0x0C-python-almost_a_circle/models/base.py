@@ -37,9 +37,6 @@ class Base:
     def save_to_file(cls, list_objs):
         """
         save instance to a file
-        Args:
-            cls: class
-            list_objs: list of objects
         """
         attributes = ['width', 'height', 'size', 'x', 'y', 'id']
         list_of_json_objs = []
