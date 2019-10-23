@@ -68,21 +68,13 @@ class Base:
         key_word = 'size'
         signal = 'Square not found'
 
-        dummy_square = cls(1, 2, 3)
-        dummy_rectangle = cls(1, 2, 3, 4)
+        if cls.__name__ == 'Square':
+            dummy = cls(1, 2, 3)
+        if cls.__name__ == 'Rectangle':
+            dummy = cls(1, 2, 3, 4)
 
-        for key in dictionary:
-            if key == key_word:
-                signal = 'Square found'
-                dummy_square.update(**dictionary)
-                break
-
-        if signal == 'Square not found':
-            dummy_rectangle.update(**dictionary)
-            return dummy_rectangle
-
-        else:
-            return dummy_square
+        dummy.update(**dictionary)
+        return dummy
 
     @classmethod
     def load_from_file(cls):
