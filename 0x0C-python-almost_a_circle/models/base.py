@@ -60,7 +60,7 @@ class Base:
 
         filename = '{}.json'.format(cls.__name__)
 
-        with open('{}'.format(filename), 'a+', encoding='utf-8') as a_file:
+        with open('{}'.format(filename), 'w+', encoding='utf-8') as a_file:
             json.dump(list_of_json_objs, a_file)
 
     @classmethod
