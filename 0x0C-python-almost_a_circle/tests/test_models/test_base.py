@@ -25,12 +25,6 @@ class TestBase(unittest.TestCase):
         obj = Base(inf)
         self.assertEqual(obj.id, inf)
 
-    def test_nan(self):
-        """if index is nan"""
-        nan = float('nan')
-        obj = Base(nan)
-        self.assertEqual(obj.id, nan)
-
     def test_negative(self):
         """if negative index"""
         obj = Base(-1)
