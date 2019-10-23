@@ -63,15 +63,15 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """to create an instance"""
-
-        key_word = 'size'
-        signal = 'Square not found'
+        """
+        to create an instance
+        from a dictionary
+        """
 
         if cls.__name__ == 'Square':
-            dummy = cls(1, 2, 3)
+            dummy = cls(1)
         if cls.__name__ == 'Rectangle':
-            dummy = cls(1, 2, 3, 4)
+            dummy = cls(1, 2)
 
         dummy.update(**dictionary)
         return dummy
