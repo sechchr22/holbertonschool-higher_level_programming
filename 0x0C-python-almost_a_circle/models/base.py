@@ -30,7 +30,7 @@ class Base:
             list_dictionaries: list of dictionaries
         """
         if list_dictionaries is None or len(list_dictionaries) is 0:
-            return []
+            return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
@@ -57,7 +57,7 @@ class Base:
 
         filename = '{}.json'.format(cls.__name__)
 
-        with open('{}'.format(filename), 'w', encoding='utf-8') as a_file:
+        with open('{}'.format(filename), 'w+', encoding='utf-8') as a_file:
             json.dump(list_of_json_objs, a_file)
 
     @classmethod
