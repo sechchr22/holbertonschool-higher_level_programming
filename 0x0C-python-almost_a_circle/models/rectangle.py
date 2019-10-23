@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""importing Base class"""
+"""
+importing Base class
+"""
 from models.base import Base
 
 
