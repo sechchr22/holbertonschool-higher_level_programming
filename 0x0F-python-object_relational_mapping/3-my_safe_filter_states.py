@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-module to list all states from database hbtn_0e_0_usa
+Shows rows that matches with the arg but this on is
+safe from Mysql injections
 """
 import MySQLdb
 from sys import argv
