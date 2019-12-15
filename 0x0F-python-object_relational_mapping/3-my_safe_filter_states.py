@@ -13,7 +13,7 @@ if __name__ == '__main__':
     arg = argv[4]
     filtered_arg = arg.split(';')
 
-    if len(filtered_arg) = 1:
+    if len(filtered_arg) is 1:
 
         db = MySQLdb.connect(
             host="localhost",
@@ -28,5 +28,5 @@ if __name__ == '__main__':
         rows = cur.fetchall()
         for row in rows:
             print(row)
-        cursor.close()
+        cur.close()
         db.close()
