@@ -6,7 +6,7 @@ import MySQLdb
 from sys import argv
 
 
-if '__name__' == '__main__':
+if __name__ == '__main__':
     username = argv[1]
     password = argv[2]
     database = argv[3]
@@ -25,6 +25,5 @@ if '__name__' == '__main__':
     rows = cur.fetchall()
     for row in rows:
         print(row)
-
     cur.close()
     db.close()
