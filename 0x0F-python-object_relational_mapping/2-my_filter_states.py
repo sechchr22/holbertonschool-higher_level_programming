@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-module to list all states from database hbtn_0e_0_usa
+module to list all states from database hbtn_0e_0_usa.
 """
 import MySQLdb
 from sys import argv
