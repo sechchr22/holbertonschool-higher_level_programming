@@ -25,7 +25,8 @@ if __name__ == '__main__':
     cur = db.cursor()
 
     cur.execute(
-        "SELECT DISTINCT cities.name FROM cities WHERE state_id IN (SELECT id FROM states WHERE name = '{}')".format(
+        "SELECT DISTINCT cities.name FROM cities WHERE \
+        state_id IN (SELECT id FROM states WHERE name = '{}')".format(
             filtered_arg[0]))
     rows = cur.fetchall()
     print(", ".join([i[0] for i in rows]))
