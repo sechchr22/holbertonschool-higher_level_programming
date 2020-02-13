@@ -6,10 +6,10 @@ const num2 = Number(args[3]);
 
 function add (a, b) {
   if (isNaN(num1) === true) {
-    console.log('NaN');
+    return NaN;
   }
   if (isNaN(num2) === true) {
-    console.log('NaN');
+    return NaN;
   }
   return (a + b);
 }
